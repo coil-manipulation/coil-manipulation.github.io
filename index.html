@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Correspondence-Oriented Imitation Learning: Flexible Visuomotor Control with 3D Conditioning">
+  <meta name="keywords" content="Promptable Manipulation, Flow, 3D, Robotics, Manipulation">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Correspondence-Oriented Imitation Learning: Flexible Visuomotor Control with 3D Conditioning</title>
+	<!-- link rel="icon" type="image/png" href="images/coil_icon.png"/ -->
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3E1N6NQSKY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-3E1N6NQSKY');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <!-- <div class="container is-fullhd"> -->
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title"><a style="color: black" href="#">Correspondence-Oriented Imitation Learning: Flexible Visuomotor Control with 3D Conditioning</a></h1>
+
+          <h3 class="title is-4 conference-authors"><a style="color: #8C1515" href="#">In Submission</a></h3>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="#">Anonymous Authors</a>
+            </span>
+          </div>
+
+          <!-- <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>*</sup> denotes equal contribution, alphabetical order</span>
+          </div> -->
+          <!-- <div class="is-size-5 publication-authors">
+            <span class="author-block">Anonymous Institution</span>
+          </div> -->
+
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+
+              <!-- PDF Link. -->
+              <!-- <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span> -->
+              <!-- arXiv Link. -->
+              <!-- <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span> -->
+              <!-- Video Link. -->
+              <!-- <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span> -->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="#"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code (Coming Soon)</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-fullhd">
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-vcentered  is-centered">
+          <!-- <video id="teaser" autoplay muted loop height="70%" width="70%">
+            <source src="videos/teaser.mp4"
+                    type="video/mp4">
+          </video> -->
+          <img src="images/teaser.jpg"
+               class="interpolation-image" width="100%"
+               alt="Teaser image for COIL."/>
+          </br>
+        </div>
+        <h2 class="subtitle has-text-justified">
+        We present <b>COIL</b>, a framework that utilizes <b>Spatial Correspondence</b> - the intended 3D motion of keypoints on manipulatable objects with flexible spatial and temporal granularity - as the task representation for enabling grounded robot manipulation with flexible task specification.
+        </h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="my-block">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+            We introduce Correspondence-Oriented Imitation Learning (COIL), a conditional policy learning framework for visuomotor control with a flexible task representation in 3D. At the core of our approach, each task is defined by the intended motion of keypoints selected on objects in the scene. Instead of assuming a fixed number of keypoints or uniformly spaced time intervals, COIL supports task specifications with variable spatial and temporal granularity, adapting to different user intents and task requirements. To robustly ground this correspondence-oriented task representation into actions, we design a conditional policy with a spatio-temporal attention mechanism that effectively fuses information across multiple input modalities. The policy is trained via a scalable self-supervised pipeline using demonstrations collected in simulation, with correspondence labels automatically generated in hindsight. COIL generalizes across tasks, objects, and motion patterns, achieving superior performance compared to prior methods on real-world manipulation tasks under both sparse and dense specifications.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+
+  <!-- <div class="my-block">
+    <div class="column is-full-width">
+      <h2 class="title is-3">Spatial Correspondence Representation</h2>
+      <p class="content has-text-justified">
+        The Spatial Correspondence Representation is a flexible task representation that allows users to specify tasks with variable spatial and temporal granularity. It defines the intended motion of keypoints on manipulatable objects, enabling grounded and flexible robot manipulation task specification.
+      </p>
+      <div>
+        <img src="images/spatial-correspondence.png"
+                  class="interpolation-image"
+                  alt="Spatial correspondence representation demonstration image."
+                  />
+      </div>
+    </div>
+  </div> -->
+
+  </br>
+  </br>
+
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website was adapted from nerfie's <a href="https://github.com/nerfies/nerfies.github.io">source code</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
