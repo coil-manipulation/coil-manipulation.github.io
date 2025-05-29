@@ -167,18 +167,11 @@
                   />
       </div>
       <p class="content has-text-justified">
-        We introduce a correspondence-oriented task representation to flexibly specify manipulation goals and constraints in 3D space. 
-        Extending object-centric flow formulations, our task representation describes the desired changes of the environment state using a collection of K keypoints selected on the scene objects.
-        As object poses and states change in the environment, the 3D coordinates of these keypoints move accordingly.
-        For each keypoint k, we specify its target 3D position at H discrete steps, yielding the task representation as a tensor c.
-        This tensor captures the spatio-temporal correspondences of the keypoints, constraining up to 3K degrees of freedom of the environment state at each step.
-      </p>
-      <p class="content has-text-justified">
-        To enable flexible task specifications, we introduce key extensions that improve the expressiveness and adaptability of the correspondence-oriented specification. While prior work assume fixed keypoint counts and dense time steps, our formulation removes those rigid assumptions and enables:
+        Extending object-centric flow formulations, our task representation describes the desired changes of the environment state using a collection of K keypoints selected on the scene objects, spanning across H discrete time steps. By allowing varying number of keypoints and time steps, we achieve the following flexibilities:
       </p>
       <ul>
-        <li><b>Spatial Flexibility</b>: Any K >= 1 keypoints can be selected for the task representation c to exert constraints of varying DoFs based on the task requirement. Moreover, the keypoints can be selected on multiple objects, either static or dynamic, allowing specifications of multistage tasks as well as constraints for objects that should stay still.</li>
-        <li><b>Temporal Flexibility</b>: The target time steps are not restricted to fixed-length or evenly spaced intervals. We have H >= 2 target coordinates for each of the K keypoints, allowing users to provide any specifications from sparse start-goal pairs to dense flows. Instead of rigidly reaching the H target coordinates at H predetermined timesteps, we require only that the targets be reached in order, leaving execution speed and recovery behavior free to adapt online.
+        <li><b>Spatial Flexibility</b>: Any K >= 1 keypoints can be selected to exert constraints of varying DoFs on multiple objects.</li>
+        <li><b>Temporal Flexibility</b>: We have H >= 2 target coordinates for each of the K keypoints, allowing users to provide any specifications from sparse start-goal pairs to dense flows. </li>
       </ul>
     </div>
   </div>
@@ -186,10 +179,10 @@
   <div class="my-block">
     <div class="column is-full-width">
       <h2 class="title is-3">Correspondence-Oriented Imitation Learning (COIL)</h2>
-      <p class="content has-text-justified">
+      <!-- <p class="content has-text-justified">
         With the spatial correspondence task representation, COIL learns a conditional policy that executes manipulation tasks in a self-supervised manner.
         We first collect training data by performing exploration actions in simulation and labeling the trajectory with the achieved scene 3D flows in hindsight as the spatial correspondence representation. The training data is further augmented during the training process by randomly sub-sampling keypoints and time steps to allow the policy to learn to generalize to different task specifications, and to learn to recover from failures. 
-      </p>
+      </p> -->
       <div class="columns is-vcentered is-centered">
         <img src="images/main_figure.jpg"
                   class="interpolation-image"
